@@ -79,6 +79,10 @@ app.get('/api/user/get', function(req, res) {
     });
 });
 
+app.get('/health', function (req, res) {
+    res.status(200).send({'status': 'UP'});
+});
+
 function findUser (criteria, callback){
     users.find(criteria, function (err, results) {
         if (err) {
